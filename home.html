@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/new-item.css">
+    <link rel="stylesheet" href="assets/css/vendas.css">
+    <link rel="stylesheet" href="assets/css/config.css">
+</head>
+
+<body>
+    <i class="fa-solid fa-spinner"></i>
+    <div id="sidebar-menu">
+        <i class="fa-solid fa-chevron-right" for="#sidebar-menu"></i>
+        <i class="fa-solid fa-chart-column"></i>
+        <a href="#home-sect" after="Dashboard">
+            <h3>Dashboard</h3><i class="fa-solid fa-chart-simple"></i>
+        </a>
+        <a href="#supp-sect" after="Fornecedores">
+            <h3>Fornecedores</h3><i class="fa-solid fa-products fa-store"></i>
+        </a>
+        <a href="#product-sect" after="Produtos">
+            <h3>Produtos</h3><i class="fa-solid fa-products fa-tag"></i>
+        </a>
+        <a href="#client-sect" after="Clientes">
+            <h3>Clientes</h3><i class="fa-solid fa-users"></i>
+        </a>
+        <a href="#purchase-sect" after="Compras">
+            <h3>Compras</h3><i class="fa-solid fa-bag-shopping"></i>
+        </a>
+        <a href="#sale-sect" after="Vendas">
+            <h3>Vendas</h3><i class="fa-solid fa-handshake"></i>
+        </a>
+
+
+        <div class="config-opt">
+            <a href="#config-sect">
+                <h3>Configurações</h3><i class="fa-solid fa-gear"></i>
+            </a>
+            <a href="#get-out">
+                <h3>Sair</h3><i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+        </div>
+
+    </div>
+    <div id="dashboard-view">
+        <header id="top-header">
+            <h1>Dashboard</h1>
+            <div class="header-opt">
+                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-user"><a href="#config-sect"></a></i>
+            </div>
+        </header>
+        <main id="main-view">
+            <section class="view-sect" id="home-sect">
+                <h2>
+                    Resumo Mensal
+                    <div id="set-month">
+                        <input type="month" id="898918">
+                        <label for="898918"><i class="fa-solid fa-calendar"></i></label>
+                    </div>
+                </h2>
+
+                <header class="h-list">
+                    <div class="resume-div" style="background: var(--g-color)">
+                        <h3>Vendido</h3>
+                        <i class="fa-solid fa-eye" value="R$ 1000.00" hidden></i>
+                    </div>
+                    <div class="resume-div" style="background: var(--t-color)">
+                        <h3>Pendente</h3>
+                        <i class="fa-solid fa-eye" value="R$ 1000.00" hidden></i>
+                    </div>
+                    <div class="resume-div" style="background: var(--p-color)">
+                        <h3>Arrecadação</h3>
+                        <i class="fa-solid fa-eye" value="R$ 1000.00" hidden></i>
+                    </div>
+                    <div class="resume-div" style="background: rgb(89, 89, 89);">
+                        <h3>Despesas</h3>
+                        <i class="fa-solid fa-eye" value="R$ 1000.00" hidden></i>
+                    </div>
+                </header>
+                <main>
+                    <div id="main-navbar">
+                        <a href="#gr-vendas">Vendas</a>
+                        <a href="#gr-despesas">Despesas</a>
+                        <a href="#gr-PagP">Pendentes</a>
+                        <a href="#gr-lucro">Lucro</a>
+                        <a href="#gr-estB">Estoque baixo</a>
+                    </div>
+                    <div class="gr-div" title="Vendas" id="gr-vendas" open></div>
+                    <div class="gr-div" title="Despesas" id="gr-despesas"></div>
+                    <div class="gr-div" title="Pendencias" id="gr-PagP"></div>
+                    <div class="gr-div" title="Lucro" id="gr-lucro"></div>
+                    <div class="gr-div" title="Estoque Baixo" id="gr-estB"></div>
+                </main>
+            </section>
+
+            <section class="view-sect" id="supp-sect">
+                <header>
+                    <h2>Fornecedores</h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="fornecedores"></i>
+                </header>
+                <main>
+                    <a href="#new-item" type="fornecedores" class="newitem-btn"><i
+                            class="fa-solid fa-plus"></i>Fornecedor</a>
+                    <button class="filter-btn">Filtros <i class="fa-solid fa-filter" list="fornecedores"></i></button>
+                </main>
+            </section>
+
+            <section class="view-sect" id="product-sect">
+                <header>
+                    <h2>Produtos</h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="produtos"></i>
+                </header>
+
+                <main>
+                    <a href="#new-item" type="produtos" class="newitem-btn"><i class="fa-solid fa-plus"></i>Produto</a>
+                    <button class="filter-btn">Filtros <i class="fa-solid fa-filter" list="produtos"></i></button>
+                </main>
+            </section>
+
+            <section class="view-sect" id="client-sect">
+                <header>
+                    <h2>Clientes</h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="clientes"></i>
+                </header>
+
+                <main>
+                    <a href="#new-item" type="clientes" class="newitem-btn"><i class="fa-solid fa-plus"></i>Cliente</a>
+                    <button class="filter-btn">Filtros <i class="fa-solid fa-filter" list="clientes"></i></button>
+                </main>
+            </section>
+
+            <section class="view-sect" id="purchase-sect">
+                <header>
+                    <h2>Compras</h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="compras"></i>
+                </header>
+                <main>
+                    <a href="" type="compras" list="compras" class="newitem-btn"><i
+                            class="fa-solid fa-plus"></i>Compra</a>
+                    <button class="filter-btn">Filtros <i class="fa-solid fa-filter" list="compras"></i></button>
+                </main>
+            </section>
+
+            <section class="view-sect" id="sale-sect">
+                <header>
+                    <h2>Vendas</h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="vendas"></i>
+
+                </header>
+                <main>
+                    <a href="" type="vendas" list="vendas" class="newitem-btn"><i class="fa-solid fa-plus"></i>Venda</a>
+                    <button class="filter-btn">Filtros <i class="fa-solid fa-filter" list="vendas"></i></button>
+
+                </main>
+            </section>
+
+            <section class="view-sect" id="new-purchase">
+                <header>
+
+                </header>
+                <main>
+
+                </main>
+            </section>
+
+            <section class="view-sect" id="new-sale">
+                <header>
+                    <h2></h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="produtos"></i>
+                </header>
+                <main>
+                    <i class="fa-solid fa-cart-shopping" text="Produtos"></i>
+
+                    <div id="list-products" open>
+
+                    </div>
+
+                    <div id="list-sale">
+                        <h2>Lista de Venda:</h2>
+                    </div>
+
+                    <div id="set-produto">
+                        <h3></h3>
+                        <div>
+                            <i class="fa-solid fa-minus"></i>
+                            <input type="number" value="1">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+
+                        <button id="confirm-quant">Confirmar</button>
+                    </div>
+
+                    <button id="finalize-sale">Finalizar Venda</button>
+                </main>
+
+            </section>
+
+            <section class="view-sect" id="config-sect">
+                <header>
+                    <h2>Configurações</h2><i class="fa-solid fa-magnifying-glass" text="Buscar" list="config"></i>
+                </header>
+                <main>
+
+                    <div class="config-div">
+                        <h3>Geral</h3>
+
+                        <div class="config-btn">Modo noturno<p></p></div>
+                    </div>
+                    <div class="config-div">
+                        <h3>Conta</h3>
+
+                        <div>Dados do Usúario<p></p></div>
+                    </div>
+                    <div class="config-div">
+                        <h3>Segurança</h3>
+
+                        <div class="config-btn">Ocultar valores<p></p></div>
+                    </div>
+
+                </main>
+            </section>
+
+            <section class="view-sect" id="new-item">
+                <header class="new-header">
+                    <h2></h2><a href="#" class="cancel">Cancelar</a>
+                </header>
+                <div class="inputs-form">
+
+                </div>
+                <button class="confirm" type="clientes" i="idCliente">Confirmar</button>
+            </section>
+
+            <div id="search-div" class="modal">
+                <input type="search" id="search-input" placeholder="Pesquisa...">
+                <i class="fa-solid fa-xmark"></i>
+
+                <div id="s-result"></div>
+            </div>
+
+            <div id="filter-div" class="modal">
+                <h4>Filtros <i class="fa-solid fa-xmark"></i></h4>
+
+                <div>
+                    <label for="0012">Filtro 1</label>
+                    <input type="checkbox" id="0012" class="filter-input">
+                </div>
+
+            </div>
+
+            <div id="select-client">
+                <h3>Selecione o Cliente <i class="fa-solid fa-xmark" id="close-set-client"></i></h3>
+                <input type="search">
+            </div>
+        </main>
+    </div>
+
+    <div id="dinamic-modal">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+    <!-- <i class="fa-solid fa-share-nodes"></i>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-rotate"></i>
+                    <i class="fa-solid fa-square-check"></i>
+                    <i class="fa-regular fa-square"></i> -->
+    <script type="module" src="src/code/index.js"></script>
+</body>
+
+</html>

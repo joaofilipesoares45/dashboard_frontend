@@ -1,0 +1,62 @@
+#config-sect {
+    & header {
+        margin-bottom: 20px;
+    }
+
+    & .config-div {
+        padding: 5px;
+        margin-bottom: 10px;
+        border-bottom: solid 1px gray;
+        color: var(--s-color);
+
+        & h3 {
+            margin-bottom: 5px;
+            color: var(--p-color);
+        }
+
+        & div.config-btn {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            & p {
+                width: 40px;
+                height: 20px;
+                border-radius: 20px;
+                background-color: rgba(89, 150, 255, 0.284);
+                display: flex;
+                align-items: center;
+                position: relative;
+                box-shadow: 0 0 3px 0 rgb(78, 31, 218);
+                cursor: pointer;
+                transition: .3s;
+
+                &::after {
+                    content: '';
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 20px;
+                    background-color: rgb(19, 30, 154);
+                    box-shadow: 0 0 3px 0 rgb(46, 46, 46);
+                    position: absolute;
+                    left: 0%;
+                    transition: .3s;
+                    pointer-events: none;
+                }
+
+                &[active]::after{
+                    left: 40%;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 5px 0 rgb(78, 31, 218);
+                }
+
+                &:hover::after {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

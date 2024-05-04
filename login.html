@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <main>
+        <div id="login-div" class="log-div" open>
+            <h2>Login</h2>
+            <div class="acount-form">
+                <div>
+                    <h4>Email</h4>
+                    <input type="email" obj_name="email" value="usuario1@gmail.com">
+                </div>
+                <div>
+                    <h4>Senha</h4>
+                    <input type="password" obj_name="senha" value='123123'>
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+            </div>
+
+            <div class="opt-btn">
+                <button class="log-btn" type="login">Login</button>
+                <a href="#new-acount">Ainda não tem uma conta?</a>
+            </div>
+        </div>
+        <div id="new-acount" class="log-div">
+            <h2>Nova conta</h2>
+            <div class="acount-form">
+                <div>
+                    <h4>Nome</h4>
+                    <input type="text" obj_name="nome" value="Usuario 1">
+                </div>
+                <div>
+                    <h4>Sobrenome</h4>
+                    <input type="text" obj_name="sobrenome" value="teste">
+                </div>
+                <div>
+                    <h4>Email</h4>
+                    <input type="email" obj_name="email" value="usuario1@gmail.com">
+                </div>
+                <div>
+                    <h4>Senha</h4>
+                    <input type="password" obj_name="senha" value="123123">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+            </div>
+
+            <div class="opt-btn">
+                <button class="log-btn" type="new-acount">Login</button>
+                <a href="#login-div">Já possui uma conta?</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="src/code/login.js"></script>
+</body>
+
+</html>

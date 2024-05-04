@@ -1,0 +1,28 @@
+{
+    "user": {
+        "nome": "Usuario 2",
+        "sobrenome": "teste",
+        "email": "usuario2@gmail.com",
+        "senha": "123123",
+        "id": 1
+    },
+    "idclientes": 0,
+    "idvendas": 0,
+    "idcompras": 0,
+    "idprodutos": 0,
+    "idfornecedores": 1,
+    "fornecedores": [
+        {
+            "nome": "Piracanjuba",
+            "cnpj": "",
+            "endereço": "",
+            "telefone": "",
+            "email": "",
+            "idfornecedores": 0
+        }
+    ],
+    "clientes": [],
+    "produtos": [],
+    "compras": [],
+    "vendas": []
+}

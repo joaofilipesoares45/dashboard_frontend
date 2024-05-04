@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --p-color: rgb(41, 82, 214);
+    --s-color: rgb(21, 37, 90);
+    --t-color: rgb(233, 81, 81);
+    --g-color: rgb(5, 129, 46);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    opacity: 0;
+    user-select: none;
+    font-family: "Open Sans", sans-serif;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: .3s;
+}
+
+body[load]{
+    opacity: 1;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+
+}
+
+main {
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(5deg, var(--p-color), var(--s-color));
+
+    & .log-div{
+        position: absolute;
+        top: -70px;
+        opacity: 0;
+        pointer-events: none;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        
+
+        background-color: rgba(255, 255, 255, 0.83);
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.736);
+        backdrop-filter: 10px;
+
+        border-radius: 10px;
+        padding: 30px;
+
+        &[open]{
+            position: relative;
+            opacity: 1;
+            pointer-events: all;
+            transition: .3s, top 0s;
+        }
+
+        & .acount-form {
+            height: 50%;
+            margin-block: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & div{
+                width: 100%;
+                margin-top: 10px;
+                position: relative;
+
+                & h4{
+                    color: rgb(93, 93, 93);
+                }
+
+                & i{
+                    position: absolute;
+                    top: 35px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+            } 
+        }
+
+        & input{
+            position: relative;
+            min-width: 300px; 
+            padding: 10px 5px;
+
+            border: solid 1px gainsboro;
+
+            outline: none;
+            font-size: .9rem;
+            font-weight: 560;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        & .opt-btn{
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+            justify-self: flex-end;
+            align-self: center;
+            margin-top: 10px;
+
+            & button{
+                font-family: "Open Sans", sans-serif;
+                font-size: 1rem;
+                background-color: var(--s-color);
+                color: white;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.141);
+
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                transition: .2s;
+
+                &:hover{
+                    background-color: white;
+                    color: var(--s-color);
+                }
+            }
+            & a{
+                color: rgb(0, 0, 0);
+                transition: .1s;
+
+                &:hover{
+                    color: var(--t-color);
+                }
+            }
+        }
+    }
+}

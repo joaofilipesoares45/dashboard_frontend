@@ -1,0 +1,288 @@
+{
+    "user": {
+        "id": 0,
+        "nome": "Usuario 1",
+        "sobrenome": "teste",
+        "email": "usuario1@gmail.com",
+        "senha": "123123"
+    },
+    "idclientes": 4,
+    "idvendas": 8,
+    "idcompras": 0,
+    "idprodutos": 3,
+    "idfornecedores": 2,
+    "fornecedores": [
+        {
+            "nome": "Intelbras Ltda",
+            "cnpj": "34443334433443",
+            "endereço": "",
+            "telefone": "1232455454",
+            "email": "intelbras@hotmail.com",
+            "idfornecedores": 1
+        }
+    ],
+    "clientes": [
+        {
+            "nome": "Luiz",
+            "cpf": "46564665654",
+            "endereço": "",
+            "telefone": "86978787878",
+            "email": "luiz1@gmail.com",
+            "idvendas": [
+                0,
+                1,
+                5,
+                6
+            ],
+            "idclientes": 2,
+            "debito": 288
+        },
+        {
+            "nome": "Francisco",
+            "cpf": "988786366",
+            "endereço": "",
+            "telefone": "9988981989",
+            "email": "francisco@hotmail.com",
+            "idvendas": [
+                2,
+                3,
+                4,
+                7
+            ],
+            "idclientes": 3,
+            "debito": 432
+        }
+    ],
+    "produtos": [
+        {
+            "nome": "Biscoito amori morango",
+            "estoque": 35,
+            "categoria": "",
+            "valorCompra": "10",
+            "valorVenda": "12",
+            "fornecedor": "",
+            "medida": "cx",
+            "idprodutos": 1
+        },
+        {
+            "nome": "Cocacola 2L",
+            "estoque": -5,
+            "categoria": "Bebida",
+            "valorCompra": "9",
+            "valorVenda": "12",
+            "fornecedor": "Cocacola",
+            "medida": "fd",
+            "idprodutos": 2
+        }
+    ],
+    "compras": [],
+    "vendas": [
+        {
+            "idclientes": 2,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 95,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    5
+                ]
+            ],
+            "idvendas": 0,
+            "data": 1713619627328
+        },
+        {
+            "idclientes": 2,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 85,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    10
+                ]
+            ],
+            "idvendas": 1,
+            "data": 1713877249036
+        },
+        {
+            "idclientes": 3,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 65,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    20
+                ]
+            ],
+            "idvendas": 2,
+            "data": 1713882204663
+        },
+        {
+            "idclientes": 3,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Cocacola 2L",
+                        "estoque": 9,
+                        "categoria": "Bebida",
+                        "valorCompra": "9",
+                        "valorVenda": "12",
+                        "fornecedor": "Cocacola",
+                        "medida": "fundo",
+                        "idprodutos": 2
+                    },
+                    1
+                ],
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 55,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    10
+                ]
+            ],
+            "idvendas": 3,
+            "data": 1714058233814
+        },
+        {
+            "idclientes": 3,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Cocacola 2L",
+                        "estoque": 4,
+                        "categoria": "Bebida",
+                        "valorCompra": "9",
+                        "valorVenda": "12",
+                        "fornecedor": "Cocacola",
+                        "medida": "Fundo",
+                        "idprodutos": 2
+                    },
+                    5
+                ],
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 45,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    10
+                ]
+            ],
+            "idvendas": 4,
+            "data": 1714604446009
+        },
+        {
+            "idclientes": 2,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Cocacola 2L",
+                        "estoque": 0,
+                        "categoria": "Bebida",
+                        "valorCompra": "9",
+                        "valorVenda": "12",
+                        "fornecedor": "Cocacola",
+                        "medida": "fd",
+                        "idprodutos": 2
+                    },
+                    4
+                ]
+            ],
+            "idvendas": 5,
+            "data": 1714676095033
+        },
+        {
+            "idclientes": 2,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 40,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    5
+                ]
+            ],
+            "idvendas": 6,
+            "data": 1714790585339
+        },
+        {
+            "idclientes": 3,
+            "status": "Aguardando Pagamento",
+            "listavenda": [
+                [
+                    {
+                        "nome": "Biscoito amori morango",
+                        "estoque": 35,
+                        "categoria": "",
+                        "valorCompra": "10",
+                        "valorVenda": "12",
+                        "fornecedor": "",
+                        "medida": "cx",
+                        "idprodutos": 1
+                    },
+                    5
+                ],
+                [
+                    {
+                        "nome": "Cocacola 2L",
+                        "estoque": -5,
+                        "categoria": "Bebida",
+                        "valorCompra": "9",
+                        "valorVenda": "12",
+                        "fornecedor": "Cocacola",
+                        "medida": "fd",
+                        "idprodutos": 2
+                    },
+                    5
+                ]
+            ],
+            "idvendas": 7,
+            "data": 1714790800299
+        }
+    ]
+}
