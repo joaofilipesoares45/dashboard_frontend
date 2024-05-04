@@ -35,7 +35,7 @@ const data_init = {
 }
 
 app.get('/', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
     console.log("Hello world!!");
@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/newItem', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
     const file = JSON.parse(req.headers.user)
@@ -53,14 +53,14 @@ app.post('/newItem', (req, res) => {
 })
 
 app.get('/users', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
     res.sendFile(path.resolve(`./uploads/usuarios.json`))
 })
 
 app.post('/new-acount', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
     data_init.user = req.body[0]
@@ -69,14 +69,14 @@ app.post('/new-acount', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
     res.sendFile(path.resolve(`./uploads/usuarios.json`))
 })
 
 app.post('/new-sale', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
     const file = JSON.parse(req.headers.user)
@@ -86,5 +86,5 @@ app.post('/new-sale', (req, res) => {
 
 app.listen(port, (req, res) => {
     console.log(`Rodando na porta ${port}!`);
-    console.log("http://127.0.0.1:8000");
+    console.log("https://finance-dashboard-bice.vercel.app:8000");
 })
