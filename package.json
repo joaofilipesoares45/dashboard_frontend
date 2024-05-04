@@ -7,9 +7,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "start": "node src/model/data_api.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/model/data_api.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
