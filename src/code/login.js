@@ -2,6 +2,8 @@ if (localStorage.dashUser !== undefined) {
     window.location = 'home.html'
 }
 
+const link = 'http://127.0.0.1:8000'
+
 document.body.onload = (e) => {
     document.body.setAttribute('load', '')
 }
@@ -57,7 +59,7 @@ function login(inputs, type) {
         user[input.getAttribute('obj_name')] = input.value
     })
 
-    fetch(`http://127.0.0.1:8000/users`)
+    fetch(`${link}/users`)
         .then(res => res.json())
         .then((users) => {
 
@@ -74,7 +76,7 @@ function login(inputs, type) {
                     users.idusuario += 1
                     users.usuarios.push(user)
 
-                    fetch(`http://127.0.0.1:8000/${type}`, {
+                    fetch(`${link}/${type}`, {
                         method: "POST",
                         headers: {
                             "Content-Type": 'application/json'

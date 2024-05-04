@@ -7,12 +7,12 @@ import { navigation_menu } from "../functions/navigation.js"
 if (localStorage.dashUser === undefined) {
     window.location = 'login.html'
 }
-
+const link = 'http://127.0.0.1:8000'
 let dB
 
 async function getData() {
     let data01
-    await fetch('http://127.0.0.1:8000', {
+    await fetch(link, {
         method: 'GET',
         headers: {
             user: localStorage.dashUser
