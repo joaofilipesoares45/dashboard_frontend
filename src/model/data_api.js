@@ -38,6 +38,8 @@ app.get('/', (req, res) => {
     res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
     res.header("Access-Control-Allow-Methods", "POST,DELETE,PUT,GET");
 
+    console.log("Hello world!!");
+
     const file = JSON.parse(req.headers.user)
     res.sendFile(path.resolve(`./uploads/user${file.id}.json`))
 })
