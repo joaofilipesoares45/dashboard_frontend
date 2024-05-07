@@ -77,34 +77,35 @@ const objects = {
     }
 }
 
-async function newItem(form, type, i) {
-    await fetch('http://127.0.0.1:8000', {
-        method: 'GET',
+async function newItem(form, type, link) {
+
+    const data = {}
+    form.querySelectorAll('input').forEach(input => {
+        data[input.getAttribute('obj_name')] = input.value
+    });
+    data.user_id = JSON.parse(localStorage.dashUser).id
+
+    let url
+    switch (type) {
+        case 'fornecedores':
+            url = `${link}/new-client`
+            break;
+        case 'produtos':
+            url = `${link}/new-product`
+            break;
+
+        case 'clientes':
+            url = `${link}/new-supplier`
+            break
+    }
+    fetch(url, {
+        method: "POST",
         headers: {
-            user: localStorage.dashUser
-        }
+            "Content-Type": 'application/json',
+            'user': localStorage.dashUser
+        },
+        body: JSON.stringify(data)
     })
-        .then(res => res.json())
-        .then(data => {
-            const item = objects[type]
-            form.querySelectorAll('input').forEach(input => {
-                item[input.getAttribute('obj_name')] = input.value
-            });
-
-            item[i] = data[i]
-            data[i] += 1
-
-            data[type].push(item)
-
-            fetch('http://127.0.0.1:8000/newItem', {
-                method: "POST",
-                headers: {
-                    "Content-Type": 'application/json',
-                    'user': localStorage.dashUser
-                },
-                body: JSON.stringify(data)
-            })
-        })
 }
 
 
