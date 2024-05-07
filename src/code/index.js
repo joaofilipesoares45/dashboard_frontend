@@ -20,7 +20,7 @@ async function getData() {
     })
         .then(res => res.json())
         .then(data => {
-            console.clear()
+            // console.clear()
             // renderFornecedores()
             // renderClientes()
             // renderProdutos()
@@ -31,8 +31,8 @@ async function getData() {
             document.querySelector('#top-header .header-opt .fa-user').setAttribute('title', data[0].nome)
         }).catch((error) => {
             getData()
-            console.clear()
-            console.log('Falha na conexão com o servidor!!!')
+            // console.clear()
+            // console.log('Falha na conexão com o servidor!!!')
         })
 
     return data01
