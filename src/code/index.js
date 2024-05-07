@@ -7,7 +7,7 @@ import { navigation_menu } from "../functions/navigation.js"
 if (localStorage.dashUser === undefined) {
     window.location = 'login.html'
 }
-const link = 'http://127.0.0.1:8000'
+const link = 'http://127.0.0.1:5001'
 let dB
 
 async function getData() {
@@ -21,16 +21,14 @@ async function getData() {
         .then(res => res.json())
         .then(data => {
             console.clear()
-            dB = data
-            data01 = data
-            renderFornecedores(data.fornecedores)
-            renderClientes(data.clientes)
-            renderProdutos(data.produtos)
-            renderSale(data)
-            renderDashboard(data)
+            // renderFornecedores()
+            // renderClientes()
+            // renderProdutos()
+            // renderSale()
+            // renderDashboard()
 
-            document.querySelector('#top-header .header-opt .fa-user').setAttribute('title', data.user.nome)
             document.body.setAttribute('load', '')
+            document.querySelector('#top-header .header-opt .fa-user').setAttribute('title', data[0].nome)
         }).catch((error) => {
             getData()
             console.clear()
@@ -75,7 +73,6 @@ document.querySelector('#sidebar-menu').addEventListener('click', (e) => {
 })
 
 document.querySelector('body').addEventListener('click', (e) => {
-    // 
     const target = e.target
 
     if (target.classList[1] === 'fa-magnifying-glass') {
@@ -207,7 +204,7 @@ document.querySelector('#new-item').addEventListener('click', (e) => {
             break;
 
         case 'confirm':
-            newItem(form, target.getAttribute('type'), target.getAttribute('i'))
+            newItem(form, target.getAttribute('type'), link)
             break;
     }
 })

@@ -2,7 +2,7 @@ if (localStorage.dashUser !== undefined) {
     window.location = 'home.html'
 }
 
-const link = 'http://127.0.0.1:8000'
+const link = 'http://127.0.0.1:5001'
 
 document.body.onload = (e) => {
     document.body.setAttribute('load', '')
@@ -50,47 +50,42 @@ document.querySelector('body').addEventListener('click', (e) => {
     }
 })
 
-
-
 function login(inputs, type) {
     const user = {}
 
     inputs.forEach(input => {
         user[input.getAttribute('obj_name')] = input.value
     })
-
     fetch(`${link}/users`)
         .then(res => res.json())
         .then((users) => {
-
             if (type === 'new-acount') {
                 let i = 0
-                users.usuarios.forEach(element => {
+                users.forEach(element => {
                     if (user.email === element.email) {
                         i = 1
                     }
                 })
 
                 if (i === 0) {
-                    user.id = users.idusuario
-                    users.idusuario += 1
-                    users.usuarios.push(user)
-
+                    users.push(user)
                     fetch(`${link}/${type}`, {
                         method: "POST",
                         headers: {
                             "Content-Type": 'application/json'
                         },
-                        body: JSON.stringify([user,users])
-                    }).then(localStorage.dashUser = JSON.stringify(user))
-                } else{
+                        body: JSON.stringify(user)
+                    }).then(() => {localStorage.dashUser = JSON.stringify(user)
+                            window.location = 'login.html'})
+                } else {
                     'usuario já cadastrado!!'
                 }
             } else {
-                users.usuarios.forEach(element => {
+                users.forEach(element => {
+                    console.log(element);
                     if (user.email === element.email && user.senha == element.senha) {
                         localStorage.dashUser = JSON.stringify(element)
-                        window.location = 'home.html'
+                        window.location = 'login.html'
                     }
                 })
             }
