@@ -12,7 +12,7 @@ let dB
 
 async function getData() {
     let data01
-    await fetch(link, {
+    await fetch('http://127.0.0.1:5001', {
         method: 'GET',
         headers: {
             user: localStorage.dashUser
